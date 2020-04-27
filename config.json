@@ -1,0 +1,21 @@
+{
+    "params":
+        {
+            "local_server":"True",
+            "local_uri":"mysql://root:@localhost/coding nation",
+            "prod_uri":"mysql://root:@localhost/coding nation",
+            "fb_url":"https://www.facebook.com/aditya.yadav.3194524",
+            "tw_url":"https://twitter.com/AdityaY64380409",
+            "wp_url": "https://wa.me/919685068900",
+            "gh_url":"https://github.com/aditya307",
+            "in_url":"https://www.instagram.com/aditya_yadav_307/",
+            "email_uri":"user email",
+            "pass_uri":"email pass",
+            "about_text": "A computer programmer, sometimes called only programmer or more recently a coder (especially in more informal contexts), is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers, or to a generalist who writes code for many kinds of software.\n\nA programmer's most oft-used computer language (e.g., Assembly, COBOL, C, C++, C#, JavaScript, Lisp, Python) may be prefixed to the term programmer. Some who work with web programming languages also prefix their titles with web.",
+            "no_of_posts": 3,
+            "admin_user":"Adi",
+            "admin_pass": "yadav1234"
+
+        }
+
+}

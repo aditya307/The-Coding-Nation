@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead mb-0" style="background-image: url('{{ url_for('static', filename='img/index.png') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>THe Coding Nation</h1>
+              <h4 id="demo"></h4>
+<script>
+    var i = 0;
+    var txt = 'A blog liked by Programmers...';
+    var speed = 50;
+    loop=true;
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    loop=true;
+      }
+    }
+    window.onload = function () {
+        typeWriter();
+
+    };
+</script>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for message in messages %}
+        <div class="alert alert-{{category}}" role="alert">-->
+<!--    <div class="alert alert-warning alert-dismissible fade show" role="alert">-->
+<!--  <strong>Holy guacamole!</strong> You should check in on some of those fields below.-->
+  {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+ 
+<!-- Todo: fetch it usnig  for loop from the database -->
+         {% for post in posts%}
+         <div class="post-preview">
+          <a href="/post/{{post.slug}}">
+            <h2 class="post-title">{{post.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{post.tagline}}
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Admin</a>
+            on {{post.date}}</p>
+        </div>
+        {{post.content[0:143]}}...
+        <hr>
+    </li></a>
+        {%endfor%}
+      
+        <!-- Pager -->
+                <div class="clearfix">
+
+
+          <a class="btn btn-primary float-leftt" href="{{prev}}"> &larr; Previous</a>
+          <a class="btn btn-primary float-right" href="{{next}}"> Next &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
